@@ -6,8 +6,8 @@ This project classifies different species of reptiles and amphibians based on im
 ### Name & URL
 | Name          | URL |
 |---------------|-----|
-| Huggingface   | [Huggingface Space](https://huggingface.co/spaces/YOUR_USERNAME/YOUR_SPACE_NAME) |
-| Model Page    | [Huggingface Model Page](https://huggingface.co/YOUR_USERNAME/resnet50-reptile-classifier) |
+| Huggingface   | [Huggingface Space](https://huggingface.co/spaces/Straueri/ReptileAmphibianClassification) |
+| Model Page    | [Huggingface Model Page](https://huggingface.co/Straueri/ReptileAmphibianClassification) |
 | Code          | [GitHub Repository](https://github.com/YOUR_USERNAME/reptile-classification) |
 
 ## Labels
