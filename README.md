@@ -11,7 +11,7 @@ Dieses Projekt klassifiziert verschiedene Arten von Reptilien und Amphibien anha
 |--------------|-----|
 | Huggingface Space | [Zur Anwendung](https://huggingface.co/spaces/Straueri/ReptileAmphibianClassification) |
 | Modellseite       | [Zum Modell](https://huggingface.co/Straueri/ReptileAmphibianClassification) |
-| GitHub Repository | [Zum Code](https://github.com/YOUR_USERNAME/reptile-classification) |
+| GitHub Repository | [Zum Code](https://github.com/ericstrausak/Image-Classification) |
 
 ---
 
