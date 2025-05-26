@@ -20,7 +20,7 @@ Dieses Projekt klassifiziert verschiedene Arten von Reptilien und Amphibien anha
 Die erkannten Arten sind:
 
 ```python
-['snake', 'frog', 'lizard', 'turtle', 'salamander', 'gecko', 'toad']  # <-- aus class_names.json
+['Chameleon', 'Crocodile_Alligator', 'Frog', 'Gecko', 'Iguana', 'Lizard', 'Salamander', 'Snake', 'Turtle_Tortoise']  # <-- aus class_names.json
 ```
 
 *(Ersetze durch deine tatsächlichen Klassennamen)*
@@ -74,20 +74,45 @@ Bilder wurden automatisch aufgeteilt: **70 % Training**, **15 % Validierung*
 
 ### 📊 Training Metrics
 
-| Epoch | Training Loss | Validation Loss | Accuracy |
-|-------|----------------|-----------------|----------|
-| 1     | 0.3582         | 0.2997          | 92.56%   |
-| 2     | 0.2125         | 0.2200          | 94.18%   |
-| 3     | 0.1573         | 0.1966          | 94.05%   |
-| 4     | 0.1472         | 0.1884          | 94.45%   |
-| 5     | 0.1338         | 0.1865          | 94.72%   |
+| Epoch | Training Loss | Validation Loss | Validation Accuracy |
+| ----- | ------------- | --------------- | ------------------- |
+| 1     | 1.6427        | 1.6613          | 43.39 %             |
+| 2     | 1.3473        | 1.3647          | 56.13 %             |
+| 3     | 1.1532        | 1.1617          | 62.26 %             |
+| 4     | 1.0633        | 1.3981          | 56.37 %             |
+| 5     | 0.9705        | 1.3436          | 54.21 %             |
+| 6     | 0.8858        | 1.0054          | 66.83 %             |
+| 7     | 0.8203        | 1.0476          | 63.94 %             |
+| 8     | 0.7609        | 1.0652          | 67.31 %             |
+| 9     | 0.7298        | 1.1247          | 63.58 %             |
+| 10    | 0.7350        | 1.1176          | 65.87 %             |
+| 11    | 0.5006        | 0.7004          | 77.76 %             |
+| 12    | 0.4017        | 0.6820          | 78.37 %             |
+| 13    | 0.3616        | 0.7138          | 77.52 %             |
+| 14    | 0.3333        | 0.7172          | 77.52 %             |
+| 15    | 0.3145        | 0.7061          | 78.37 %             |
+
 
 ---
 
 ## 🧪 Evaluation
 
-- **Test Accuracy:** ~94.7 %
-- **Verwendete Metriken:** Accuracy, Confusion Matrix (siehe unten)
+| Klasse                | Precision | Recall | F1-Score | Support |
+| --------------------- | --------- | ------ | -------- | ------- |
+| Chameleon             | 0.79      | 0.47   | 0.59     | 32      |
+| Crocodile\_Alligator  | 0.84      | 0.85   | 0.84     | 104     |
+| Frog                  | 0.89      | 0.87   | 0.88     | 75      |
+| Gecko                 | 0.52      | 0.59   | 0.55     | 46      |
+| Iguana                | 0.75      | 0.68   | 0.71     | 75      |
+| Lizard                | 0.63      | 0.61   | 0.62     | 75      |
+| Salamander            | 0.81      | 0.74   | 0.77     | 73      |
+| Snake                 | 0.73      | 0.81   | 0.77     | 75      |
+| Turtle\_Tortoise      | 0.90      | 0.94   | 0.92     | 280     |
+| **Gesamt (Accuracy)** |           |        | **0.80** | 835     |
+| **Macro Avg**         | 0.76      | 0.73   | 0.74     | 835     |
+| **Weighted Avg**      | 0.80      | 0.80   | 0.80     | 835     |
+
+
 
 ---
 
@@ -95,42 +120,14 @@ Bilder wurden automatisch aufgeteilt: **70 % Training**, **15 % Validierung*
 
 Zusätzlich wurde `openai/clip-vit-b-32` zur Zero-Shot-Evaluierung verwendet.
 
-| Methode                                | Accuracy | Precision | Recall |
-|----------------------------------------|----------|-----------|--------|
-| CLIP Zero-Shot                         | ~88 %    | -         | -      |
-| ResNet50 (Transfer Learning, Aug.)     | ~94.7 %  | -         | -      |
+| Methode                            | Accuracy |
+| ---------------------------------- | -------- |
+| CLIP Zero-Shot                     | 85.99 %  |
+| ResNet50 (Transfer Learning, Aug.) | 80.4 %   |
+
 
 ---
 
-## 📁 Projektstruktur
-
-```
-project/
-│
-├── app.py                  # Inferenzlogik
-├── deployment/
-│   ├── reptile_classifier.pth
-│   └── class_names.json
-├── data/
-│   ├── train/
-│   ├── val/
-│   └── test/
-├── doc/
-│   ├── class_distribution.png
-│   └── sample_predictions.png
-└── README.md
-```
-
----
-
-## 📷 Visualisierungen
-
-| Beschreibung                 | Bild |
-|-----------------------------|------|
-| Klassenverteilung           | ![Class Distribution](doc/class_distribution.png) |
-| Beispielhafte Vorhersagen   | ![Sample Prediction](doc/sample_predictions.png) |
-
----
 
 ## 🛠️ Verwendete Bibliotheken
 
@@ -150,7 +147,3 @@ project/
 
 ---
 
-## 👤 Autoren & Lizenz
-
-- **Autor:** Dein Name
-- **Lizenz:** Apache 2.0
